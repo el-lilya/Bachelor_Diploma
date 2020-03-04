@@ -1,0 +1,1085 @@
+\documentclass[a4 paper, 12 pt]{article}
+\usepackage{tocloft}
+\usepackage{cmap} % makes pdf file with russian searchable
+\usepackage{amsmath, amsfonts, amssymb, latexsym}
+\usepackage[T2A]{fontenc} %%%%%%% кириллические шрифты
+\usepackage[english,russian]{babel} %%%%% правила русского языка
+%\usepackage[cp866]{inputenc} %%%% в кодировке MS DOS
+\usepackage[cp1251]{inputenc} %%%% в кодировке WIN
+%\usepackage{pictex}
+\usepackage{comment}
+\usepackage{rotating}
+%\usepackage{showkeys}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{epstopdf}
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+%\usepackage{pictex}
+%\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{algorithm,algorithmic}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mwe}
+\floatname{algorithm}{Алгоритм}
+\def\algorithmicrequire{\textbf{Input:}}
+\def\algorithmicensure{\textbf{Output:}}
+
+
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{caption}
+
+%%%%%%%%%%%%%%%%%%%%%%%%  Поля препринта ИПМ им. М.\,В. Келдыша %%%%%%%%%%%%%
+\parindent=1.25cm
+\setlength{\topmargin}{-7mm} \setlength{\oddsidemargin}{-3.5mm}
+\setlength{\evensidemargin}{0pt} \setlength{\marginparwidth}{1.0 in}
+\setlength{\marginparsep}{0pt}
+
+\setlength{\headheight}{0pt} \setlength{\headsep}{0pt}
+\setlength{\topskip}{0pt}
+
+%\setlength{\footheight}{2\baselineskip}
+%\setlength{\footskip}{2\baselineskip}
+
+% A4 is 29,7301778cm x 21,0224103cm
+%     =  9,7047944in x 6,2765395in
+
+\setlength{\textheight}{248mm}  %{24,6501778cm}
+\setlength{\textwidth}{167mm}
+
+%\headsep = 1 pt
+%\voffset = -2.5 cm
+%\hoffset= 0 cm
+%\textheight = 23 cm
+%\textwidth = 15 cm
+%\pagestyle{headings}
+
+%%%%ENGLISH Version%%%%%%%%%%%%%%%%%%%%%
+
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{definition*}{Definition}%[section]
+%\newtheorem{proof}{Proof}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\numberwithin{equation}{section}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\newtheorem{theorem}{Теорема}[section]
+
+\newtheorem{proposition}{Предложение}[section]
+\renewcommand{\theproposition}{\thesection.\arabic{proposition}}
+
+\newtheorem{corollary}{Следствие}[section]
+\renewcommand{\thecorollary}{\thesection.\arabic{corollary}}
+
+\newtheorem{lemma}{Лемма}[section]
+\renewcommand{\thelemma}{\thesection.\arabic{lemma}}
+
+%\theoremstyle{definition}
+\newtheorem{definition}{Определение}[section]
+\newtheorem{definition*}{Определение}%[section]
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{defin}{Definition}
+
+%\theoremstyle{plain} \theoremstyle{remark}
+\newtheorem{remark}{\it Замечание}[section]
+\renewcommand{\theremark}{\thesection.\arabic{remark}}
+
+\renewcommand\cftsecdotsep{\cftdotsep}
+\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}} %for dots in bibliography list
+\renewcommand\cftsecaftersnum{.}
+%\bibliographystyle{maik}
+
+\newcommand{\CS}{\bar{\mathbb{C}}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Oo}{\mathcal{O}}
+\newcommand{\Rr}{\mathcal{R}}
+\newcommand{\Pp}{\mathcal{P}}
+\newcommand{\Aa}{\mathcal{A}}
+\newcommand{\tol}{\rm{tol}}
+% nasha vstavka % % %
+%\newcommand{\CapI}{Зависимости $\mathrm{Re_E}$ (сверху) и $\mathrm{Re_L}$ (снизу) от периода оребрения для $\varepsilon=0.2$ (\textit{а}) и 0.4 (\textit{б}) при $\gamma=2$ (---) и 4
+%(\mbox{- -}); $\mathrm{Re}_\mathrm{E}^\mathrm{p}\approx33.07$, $\mathrm{Re}_\mathrm{L}^\mathrm{p}=3.848\times10^3$ ($\cdots$)}
+
+%\newcommand{\CapII}{Зависимость  от периода оребрения для $\varepsilon=0.2$ (\textit{а}) и 0.4 (\textit{б}) при $\gamma=2$ (---) и 4
+%(\mbox{- -}); $\mathrm{Re}_\mathrm{L}^\mathrm{p}=3.848\times10^3$ ($\cdots$)}
+% % %
+\def\bbc{{\mathbb C}}
+\def\bbn{{\mathbb N}}
+\def\bbr{{\mathbb R}}
+\def\calv{{\cal V}}
+\def\calc{{\cal C}}
+\def\cald{{\cal D}}
+\def\calf{{\cal F}}
+\def\ep{\epsilon}
+\def\lam{\lambda}
+\def\ulam{\Lambda}
+\def\uom{\Omega}
+\def\om{\omega}
+\def\udel{\Delta}
+\def\lgrarrow{\mathrel{\hbox to 30pt{\rightarrowfill}}}
+\def\eop{$\blacksquare$}
+\def\pf{\noindent{\bf Proof.~~}}
+
+\begin{document}
+	
+\large \thispagestyle{empty}
+
+{\bfseries
+	\begin{center}
+		{\Large Ордена Ленина \\
+			ИНСТИТУТ ПРИКЛАДНОЙ МАТЕМАТИКИ \\
+			имени. М.\,В. КЕЛДЫША \\
+			Российской академии наук}\end{center} \vskip 7 cm
+	\begin{center}
+		{\Large Л.\,А. Саржина, Г.\,А. Бочаров, Н.\,В. Перцев, Ю.\,М.~Нечепуренко}
+	\end{center}
+	\vskip 2 cm
+	\begin{center}
+		{\huge
+			Численный анализ}
+		\medskip
+		{\huge стационарных состояний модели}
+		\medskip
+		{\huge ВИЧ-инфекции Бочарова-Перцева}
+		
+		
+		\vskip 4 cm
+		
+	\end{center}
+	\vfill
+	\begin{center}
+		{\Large МОСКВА, 2020 г.}
+	\end{center}
+}
+\newpage
+\thispagestyle{empty}
+\noindent {\bfseries  Л.\,А. Саржина, Г.\,А. Бочаров, Н.\,В. Перцев,  Ю.\,М. Нечепуренко}
+\vskip 0.5 cm
+\noindent {\bfseries  Численный анализ стационарных состояний модели ВИЧ-инфекции Бочарова-Перцева}
+
+\vskip .5 cm \noindent {\bfseries Аннотация.} 
+В работе рассматривается задача гарантированного вычисления всех стационарных состояний модели ВИЧ-инфекции Бочарова-Перцева при фиксированных значениях параметров и анализа их устойчивости. Показано, что исходная система семи нелинейных уравнений, неотрицательными решениями которой являются стационарные состояния, сводится к системе двух уравнений. Аналитически локализована область возможных неотрицательных решений. Предложена эффективная технология вычисления всех неотрицательных решений  и анализа их устойчивости. 
+Полученные результаты дают вычислительную основу для исследования хронических состояний с помощью модели Бочарова-Перцева. 
+
+ 
+
+\vskip .5 cm \noindent {\bfseries Ключевые слова:} вирусная инфекция, иммунный ответ, модель Бочарова-Перцева,  уравнения с запаздыванием, стационарные состояния, устойчивость
+
+
+
+
+
+\vskip 0.5 cm \noindent
+{\bfseries L.\,A. Sarzhina, G.\,A. Bocharov, N.\,V. Pertsev, Yu.\,M. Nechepurenko}
+\vskip 0.5 cm
+\noindent {\bfseries Numerical steady state analysis of the Bocharov-Pertsev model HIV-1 infection}
+\vskip 0.5 cm \noindent {\bfseries
+	Abstract.}
+The problem of guaranteed computation of all steady states of the Bocharov-Pertsev model with fixed values of parameters and analysis of their stability is considered. It is shown that the system of
+nine nonlinear equations, non-negative solutions of which are steady states, can be reduced to a system of two equations.
+  Region of possible non-negative solutions is analytically localized. An effective technology for computing all non-negative solutions and analyzing their stability is proposed.
+The obtained results  provide a computational basis for the study  of steady states using the Bocharov-Pertsev model.
+
+
+
+
+
+
+\vskip .5 cm \noindent {\bfseries Key words:} viral infection, immune response, Bocharov-Pertsev model,
+ delayed equations, steady states, stability
+
+
+
+\vskip 0.5 cm \noindent Разработка и реализация используемых алгоритмов выполнены при финансовой поддержке Российского научного фонда (проект N 17-71-20149),
+численные эксперименты выполнены при финансовой поддержке Российского научного фонда (проект N 18-11-00171).
+
+\vskip 0.5 cm
+
+\newpage
+
+\section{Введение}
+
+
+\section{Математическая модель противовирусного иммунного ответа}
+\label{S2}
+Математическая модель ВИЧ-инфекции Бочарова-Перцева сформулирована в \cite{Pertsev_2019} в виде системы нелинейных интегро-дифференциальных уравнений с запаздывающим аргументом. Система описывает скорость изменения во времени концентрации следующих популяций: 
+
+\begin{itemize} 
+	\item неинфецированных клеток-мишеней $A(t)$ --- дендритные клетки, макрофаги, CD4+ T-лимфоциты;
+	\item латентно инфецированных клеток $L(t)$ --- клетки, незаметно инфецированные для иммунной системы;
+	\item инфецированных клеток, производящих вирусные частицы $I(t)$;
+	\item зрелых вирусных частиц $V(t)$ --- вирусные частицы, готовые заражать;
+	\item наивных неактивированных CD8+ T-лимфоцитов $E_0(t)$;
+	\item клеток памяти CD8+ T-лимфоцитов $Q(t)$;
+	\item эффекторных цитотоксичных CD8+ T-лимфоцитов $E(t)$.
+\end{itemize}
+Опишем популяции клеток, концентрации которых не будут использоваться в расчетах:
+\begin{itemize}
+	\item продуктивно-инфецированные клетки до выхода из них новых вирусных частиц $C(t)$---заметны для иммунной системы, но не производят новые вирусные частицы;
+	\item незрелые вирусные частицы $U(t)$ --- только что вышедшие из инфицированной клетки новые вирусные частицы, не готовые заражать;
+	\item активированные пролиферирующие CD8+ T-лимфоциты $E_1(t)$;	
+	\item активированные клетки памяти CD8+ T-лимфоцитов $E_2(t)$.
+\end{itemize}
+Будем предполагать далее, что все переменные имеют размерность клеток/мл или частиц/мл. \\
+
+Введем следующие вспомогательные переменные:\newline
+скорость появления клеток $C$: $$\rho_C(t) = (1-p_L)\gamma_{A,V}A(t)V(t)+\gamma_{A,I}A(t)I(t)+\gamma_{L,I}L(t)I(t)+\alpha_LL(t), $$
+скорость секреции клеток $U$: $$\rho_U(t)=\nu_II(t),$$
+скорость активации клеток $E_1$: $$\rho_{E_1}(t)=\gamma_{E_0,A,V}E_0(t)A(t)V(t),$$
+скорость активации клеток $E_2$:
+$$\rho_{E_2}(t) = \gamma_{Q,A,V}Q(t)A(t)V(t).$$
+
+Система состоит из двух блоков: блока, описывающего процесс формирования инфецированных и латентно 	инфецированных клеток
+{\allowdisplaybreaks
+	\begin{eqnarray}
+	\frac { d }{ dt } A(t) &=&r_A - \mu_A A(t)-\gamma_{A,V} A(t)V(t)-\gamma_{A,I}A(t)I(t),\label{Model1_1} \\
+	\nonumber \\
+	%
+	\frac { d }{ dt } L(t) &=& -(\mu_L +\alpha_L)L(t)-\gamma_{L,I}L(t)I(t)+p_L\gamma_{A,V}A(t)V(t),\label{Model1_2} \\
+	\nonumber \\
+	%
+	\frac { d }{ dt } I(t) &=& -(\mu_I+\sigma_I\nu_I)I(t)-\gamma_{E,I}E(t)I(t)+e^{-\mu_C\omega_C}\rho_C(t-\omega_C),
+	\label{Model1_3} \\
+	\nonumber \\ 
+	%
+	\frac { d }{ dt } V(t) &=&-\mu_VV(t)-\gamma_{A,V}A(t)V(t)-\gamma_{L,V}L(t)V(t)- \label{Model1_4} \\
+	&&-\gamma_{C,V}\int_{t-\omega_C}^{t}e^{-\mu_C(t-s)}\rho_C(s)dsV(t)
+	+e^{-\mu_U\omega_U}\rho_U(t-\omega_U), 
+	\nonumber 
+	\end{eqnarray}
+и блока, описывающего иммунный ответ	
+	\begin{eqnarray}
+	\frac { d }{ dt } E_0(t) &=& 
+	r_{E_0}-\mu_{E_0}E_0(t)-\rho_{E1}(t),
+	\label{Model1_5} \\
+	\nonumber \\
+	%
+	\frac { d }{ dt } Q(t) &=& -\mu_QQ(t)-\rho_{E_2}(t)+n_{Q_1}\rho_{E_1}(t-\omega_{E_1})+n_{Q_2}\rho_{E_2}(t-\omega_{E_2}),
+	\label{Model1_6} \\
+	\nonumber \\
+	%
+	\frac { d }{ dt } E(t) &=& -\mu_EE(t)-p_E\gamma_{E,I}E(t)I(t)+n_{E_1}\rho_{E_1}(t-\omega_{E_1})+
+	\label{Model1_7} \\
+	&&+n_{E_2}\rho_{E_2}(t-\omega_{E_2}).
+	\nonumber 
+	\end{eqnarray}
+	
+	Биологический смысл параметров системы пояснен в Табл. \ref{Table1}. 
+	Для биологической  адекватности модели (\ref{Model1_1})---(\ref{Model1_7}) значения  всех этих параметров должны быть неотрицательными.  Более того, интерес представляет только случай когда все параметры положительные и выполнены
+	следующие неравенства:
+	\begin{eqnarray}	
+	0<\sigma_I<1, \;
+	0\leq p_E\leq 1.  \label{HYP1}
+	\end{eqnarray}
+	
+	Далее мы будем предполагать, что  неравенство (\ref{HYP1}) выполнено.
+	
+	%Отметим, что неравенства (\ref{HYP1}) означают, что
+	%все клетки и антитела имеют конечное время жизни....
+	
+	
+	\begin{table}[h!]
+		\begin{center}
+			\caption {Параметры модели. } \label{Table1} 
+			\begin{footnotesize}
+				\begin{tabular}{ |c|l| } 
+					\hline
+					Параметр & \multicolumn{1}{|c|}{ Биологический смысл параметра, размерность } \\
+					\hline
+					$r_A$ & Константа скорости продуцирования клеток-мишеней,$\text{ сут}^{-1}$  \\
+					\multirow{2}{*}{$r_{E_0}$} & Константа скорости продуцирования клеток-предшественников CD8+ \\&T-лимфоцитов (ЦТЛ),$\text{ сут}^{-1}$  \\
+					$\mu_A$ & Константа скорости естественной гибели клеток-мишеней,$\text{ сут}^{-1}$ \\
+					$\mu_L$ & Константа скорости естественной гибели латетно-инфецированных клеток,$\text{ сут}^{-1}$ \\
+					\multirow{2}{*}{$\mu_I$} & Константа скорости естественной гибели инфецированных клеток, производящих новые \\ & вирусные частицы,$\text{ сут}^{-1}$\\
+					\multirow{2}{*}{$\mu_C$} & Константа скорости естественной гибели инфецированных клеток, пока не \\&производящих  новые вирусные частицы,$\text{ сут}^{-1}$ \\
+					\multirow{2}{*}{$\mu_{E_0}$} & Константа скорости естественной гибели клеток-предшественников CD8+ \\& T-лимфоцитов,$\text{ сут}^{-1}$ \\
+					$\mu_Q$ & Константа скорости естественной гибели клеток памяти CD8+ T-лимфоцитов,$\text{ сут}^{-1}$ \\
+					\multirow{2}{*}{$\mu_E$} & Константа скорости естественной гибели  эффекторных цитотоксичных \\&CD8+ T-лимфоцитов,$\text{ сут}^{-1}$  \\
+					$\mu_U$ & Константа скорости естественной гибели незрелых вирусных частиц,$\text{ сут}^{-1}$ \\
+					$\mu_V$ & Константа скорости естественной гибели зрелых вирусных частиц,$\text{ сут}^{-1}$  \\
+					\multirow{2}{*}{$\sigma_{I,E}$} & Доля инфецированных клеток, производящих вирусные частицы, умирающих из-за \\&вируса,$\text{ сут}^{-1}$ \\ 
+					\multirow{2}{*}{$p_L$} & Доля клеток-мишеней, становящиеся латентно-инфецированными после контакта с \\& вирусом \\ 
+					$\alpha_{L}$ & Константа скорости перехода  клетки из латентно-инф. состояния в продуктивно-инф. \\ 
+					$n_{Q_1}$ & Число клеток памяти, потомков активированной  CD8+ T-клетки    \\ 
+					$n_{Q_2} $ & Число клеток памяти, потомков активированной клетки памяти   \\
+					$n_{E_1} $ & Число ЦТЛ, потомков активированной CD8+ T-клетки  \\	
+					$n_{E_2} $ & Число ЦТЛ, потомков активированной CD8+ Т-клетки памяти  \\
+					$p_E $ & Доля ЦТЛ, умирающих от взаимодействия с инфецированной клеткой \\
+					\multirow{2}{*}{$\gamma_{L,V}  $} & Константа скорости расхода вируса на взаимодействия с латентно-инфецированной \\&клетки,$\text{ сут}^{-1}$ \\
+					\multirow{2}{*}{$\gamma_{C,V} $} & Константа скорости расхода вируса на взаимодействия с продуктивно-инф. клетки,\\&$\text{ сут}^{-1}$  \\
+					\multirow{2}{*}{$\gamma_{A,V} $} & Константа скорости заражения клетки-мишени из-за взаимодействия с вирусной \\&частицей,$\text{ сут}^{-1}$ \\
+					\multirow{2}{*}{$\gamma_{L,I} $} & Константа скорости перехода из латентно-инф. состояния в продуктивно-инф. из-за \\ & взаимодействия с инфецированной клеткой,$\text{ сут}^{-1}$ \\
+					\multirow{2}{*}{$\gamma_{A,I} $} & Константа скорости заражения клетки-мишени из-за взаимодействия с инфецированной \\ & клеткой,$\text{ сут}^{-1}$\\
+					\multirow{2}{*}{$\gamma_{E,I} $} & Константа скорости разрушения инфецированных клеток цитотоксичными T-клетками,\\&$\text{ сут}^{-1}$ \\
+					$\gamma_{E_0,A,V} $ & Константа скорости активации ВИЧ-специфичных CD8+ T-клеток,$\text{ сут}^{-1}$\\
+					$\gamma_{Q,A,V} $ & Константа скорости активации клеток памяти,$\text{ сут}^{-1}$\\
+					\multirow{2}{*}{$\omega_C$} & Время, через которое продуктивно-инф. клетка начинает производить вирусные \\&частицы,$\text{ сут}$  \\ 
+					$\omega_{U} $ & Длительность созревания вирусной частицы,$\text{ сут}$ \\
+					$\omega_{E_1} $ & Продолжительность цикла деления и дифференцировки активированной ЦТЛ,$\text{ сут}$  \\
+					\multirow{2}{*}{$\omega_{E_2} $} & Продолжительность цикла деления и дифференцировки активированной клетки \\&памяти,$\text{ сут}$\\
+					
+					
+					
+					
+					\hline
+				\end{tabular}
+			\end{footnotesize}
+		\end{center}
+	\end{table}
+	
+	
+	
+	\begin{table}[h!]
+		\caption{Значения параметров модели (\ref{Model1_1})---(\ref{Model1_3}) для трех тестов. }\label{Table2}
+		
+		\begin{center}
+			\begin{footnotesize}
+				\begin{tabular}{ |c|c|c|c| }
+					\hline					
+					Параметр  & Набор 1 &  Набор 2 & Набор 3 \\					
+					\hline
+					$r_A$ & 5000 &$2000$ &  2000 \\
+					$r_{E_0}$ & 12 &$120$ &  120 \\
+					$\mu_A$ & 0.01 &$0.01 $ &  0.01\\
+					$\mu_L$ & 0.01&  $0.01 $  & 0.01\\
+					$\mu_I$ & 0.01& $0.01 $  & 0.01\\
+					$\mu_C$ & 0.01& $0.01 $  &0.01\\
+					$\mu_{E_0}$ & 0.01& $0.01$  &0.01\\
+					$\mu_Q$ & $0.01 $ & 0.01 &0.05\\
+					$\mu_E$ & $0.08 $ & 0.08 &0.08\\
+					$\mu_U$ & $3 $ & 3 &3\\
+					$\mu_V$ & $3 $ & 3 &3\\
+					$\nu_I$ & $110$ & 110 &110\\
+					$\sigma_{I,E}$ & $0.0032$ & $0.0032$ &0.0032\\ 
+					$p_L$ & $0.3 $ & $0.3 $ & 0.3\\
+					$\alpha_{L}$ & 0.05& $0.1$  &0.02\\
+					$n_{Q_1}$ & $12$ &12 &12\\
+					$n_{Q_2}$ & $10$ &10 &10\\
+					$n_{E_1}$ & $16$ &16 &16\\
+					$n_{E_2}$ & $12$ &12 &12\\
+					$p_E$ & $0.12$ &0.12 &0.12\\
+					$\gamma_{L,V}$ & $0.1\cdot 10^{-7}$& $0.35\cdot 10^{-7}$  & $2\cdot 10^{-6}$\\
+					$\gamma_{C,V}$ & $0.1\cdot 10^{-7}$& $0.35\cdot 10^{-7} $ & $1.5\cdot 10^{-6}$\\
+					$\gamma_{A,V}$ & $0.1\cdot 10^{-7}$& $0.35\cdot 10^{-7}$ & $0.12\cdot 10^{-6}$\\
+					$\gamma_{L,I}$ & $0.2\cdot 10^{-6}$& $5\cdot 10^{-7} $ & $10^{-6}$\\
+					$\gamma_{A,I}$ & $0.2\cdot 10^{-6}$& $5\cdot 10^{-7} $ & $0.15\cdot 10^{-6}$\\
+					$\gamma_{E,I}$ & $1.5\cdot 10^{-6}$& $3.5\cdot 10^{-5} $ & $3.5\cdot 10^{-5}$\\
+					$\gamma_{E_0,A,V}$ & $7\cdot 10^{-14}$ & $7\cdot 10^{-10}$& $7\cdot 10^{-10}$\\
+					$\gamma_{Q,A,V}$ & $4\cdot 10^{-14}$ & $4\cdot 10^{-10}$& $4\cdot 10^{-10}$\\				
+					$\omega_C$ & $0.2 $ & 0.2 &0.1\\
+					$\omega_U$ & $0.02 $ & 0.02 &0.02\\
+					$\omega_{E_1}$ & $2.5 $ & 1.5 &1.5\\
+					$\omega_{E_2}$ & $2.3 $ & 1.2 &1.2\\	
+					
+									
+					\hline
+				\end{tabular}
+			\end{footnotesize}
+		\end{center}
+	\end{table}
+	
+	Иллюстрировать работу предложенных алгоритмов мы будем при значениях параметров, приведенных в Табл. \ref{Table2} и  соответствующих начальной стадии ВИЧ. 
+	
+	Отметим, что задача Коши для системы (\ref{Model1_1})---(\ref{Model1_7}) с неотрицательными непрерывными начальными значениями и неотрицательными параметрами глобально разрешима на любом конечном временном интервале \cite{Pertsev_2018}. Для  определения решения при $t>0$ достаточно задать значения 
+	\begin{eqnarray}
+	A(t)=A^0(t), L(t)=L^0(t), I(t)=I^0(t), V(t)=V^0(t), \nonumber \\
+	E_0(t)=E_0^0(t), Q(t)=Q^0(t), E(t)=E^0(t), \qquad -\omega_{max}\leq t\leq 0, \label{initial}
+	\end{eqnarray}
+	где $\omega_{max}=\max\{\omega_C,\omega_U,\omega_{E_1},\omega_{E_2}\}$. Все функции в (\ref{initial}) неотрицательные и непрерывные.
+	
+	
+	
+	Обозначив вектор переменных системы  (\ref{Model1_1})---(\ref{Model1_7}) через
+	\begin{equation}
+	U= (A, L, I, V, E_0, Q,E)^T, \label{varU}
+	\end{equation}
+	будем записывать эту систему в следующем компактном виде:
+	\begin{multline}
+	\frac { dU}{ dt }(t) =F(U(t),U(t-\omega_C), U(t-\omega_U),U(t-\omega_{E_1}), U(t-\omega_{E_2}),\\\{U(s):t-\omega_C\leq s \leq t\}), 
+	\label{Model2}
+	\end{multline}
+	где	$\omega_C,\omega_U,\omega_{E_1},\omega_{E_2}$ означают соответствующие задержки. 
+
+\newpage	
+\section{Задача Коши}
+\subsection{Описание алгоритма решения задачи Коши} \label{sec_3.1}
+Для численного решения задачи Коши для системы (\ref{Model1_1})---(\ref{Model1_7}) в данной работе применим неявную схему второго порядка BDF2 \cite{HNW} на равномерной сетке
+
+$$
+\{t_k=\delta k:\; k=-m_{max}+1,-m_{max}+2,\ldots\},
+$$
+построенной с шагом $\delta>0$ в полуинтервале $(-\omega_{max},\infty)$. Величины $m_\alpha=[\omega_\alpha/\delta]$, $ \alpha\in\{C,U,E_1,E_2\}$, где  $[.]$ означает целую часть числа, являются дискретными аналогами задержек, $m_{max}=max\{m_C,m_U,m_{E_1},m_{E_2}\}$. Тогда система (\ref{Model2}) примет следующий вид:
+\begin{multline}\label{LinBDF2a}
+\frac { 1.5U_k- 2U_{k-1} +0.5U_{k-2}}{\delta} =\\= \widehat{F}(U_k,U_{k-m_C}, U_{k-m_U},\ldots, U_{k-m_{E_2}},\{U_k, U_{k-1}, \ldots U_{k-m_C}\}),\\
+k=1,2,\ldots,
+\end{multline}
+где $U_k$ --- сеточная функция, аппроксимирующая   $U(t_k)$. В качестве начальных данных для решения задачи Коши нужно задать значения  $U_{-m_{max}+1},\ldots \\ \ldots, U_{0}$.
+
+Запишем уравнение (\ref{LinBDF2a}) в виде
+\begin{eqnarray}
+G(U_k)=0 \label{G=0},\qquad k = 1,2,\ldots, \nonumber
+\end{eqnarray}
+где
+\begin{multline}
+G(U_k) = 1.5U_k- 2U_{k-1} +0.5U_{k-2} - \\ -\delta \widehat{F}(U_k,U_{k-m_C}, U_{k-m_U},\ldots, U_{k-m_{E_2}},\{U_k, U_{k-1}, \ldots U_{k-m_C}\}). \nonumber 
+\end{multline}
+На каждом шаге решаем уравнение (\ref{G=0}) относительно $U_k$ методом Ньютона с начальным значением $U_{k-1}$. Якобиан функции $G(U_k)$ имеет вид 
+\begin{equation}\label{Jacob}
+J_k = 1.5I- \delta D_k, 
+\end{equation}
+где
+$$
+D_k = \frac { \partial \widehat{F}(U_k,U_{k-m_C}, U_{k-m_U},\ldots, U_{k-m_{E_2}},\{U_k, U_{k-1}, \ldots U_{k-m_C}\})} {\partial U_k }, 
+$$
+а $I$ означает единичную матрицу седьмого порядка. Элементы матрицы $D_k = \{d_{ij}\}_{i,j = 1}^{7}$:
+
+
+
+\begin{gather*}	
+d_{11} = -\mu_A-\gamma_{A,V}V-\gamma_{A,I}I,
+d_{12} = 0,
+d_{13} = -\gamma_{A,I}A,
+d_{14} = -\gamma_{A,V}V,  \\
+d_{15} = 0,
+d_{16} = 0,
+d_{17} = 0, 
+d_{21} = p_L\gamma_{A,V}V,
+d_{22} = -\mu_L-\alpha_L-\gamma_{L,I}I,
+d_{23} = -\gamma_{L,I}L,  \\
+d_{24} =  p_L\gamma_{A,V}A,
+d_{25} = 0,
+d_{26} = 0,
+d_{27} = 0,
+d_{31} = 0,
+d_{32} = 0,
+d_{33} = -\mu_I-\sigma_I\nu_I-\gamma_{E,I}E,  \\
+d_{34} = 0,
+d_{35} = 0,
+d_{36} = 0,
+d_{37} = 0, \\
+d_{41} = -\gamma_{A,V}V-\frac{\gamma_{C,V}}{2}((1-p_L)\gamma_{A,V}V+\gamma_{A,I}I)\delta V,  \\
+d_{42} = -\gamma_{L,V}V-\frac{\gamma_{C,V}}{2}(\gamma_{L,I}I+\alpha_L)\delta V,\\
+d_{43} = -\frac{\gamma_{C,V}}{2}(\gamma_{A,I}A+\gamma_{L,I}L)\delta V, \\ 
+d_{44} = -\mu_V-\gamma_{A,V}A-\gamma_{L,V}L-\gamma_{C,V}\sum_{i=k-m_C+1}^{k}\frac{\delta}{2}(e^{-\mu_C\delta (k-i+1)}\rho_{C_{i-1}}+e^{-\mu_C\delta (k-i)}\rho_{C_i})- \\ -\frac{\gamma_{C,V}}{2}(1-p_L)\gamma_{A,V}A\delta V, \\
+d_{45} = 0,
+d_{46} = 0,
+d_{47} = 0,
+d_{51} = -\gamma_{E_0,A,V}E_0V,
+d_{52} = 0,
+d_{53} = 0, \\
+d_{54} = -\gamma_{E_0,A,V}AE_0,
+d_{55} = -\mu_{E_0}-\gamma_{E_0,A,V}AV,
+d_{56} = 0,
+d_{57} = 0, \\
+d_{61} = -\gamma_{Q,A,V}QV,
+d_{62} = 0,
+d_{63} = 0,
+d_{64} = -\gamma_{Q,A,V}QA,
+d_{65} = 0, \\
+d_{66} = -\mu_Q-\gamma_{Q,A,V}AV, 
+d_{67} = 0,
+d_{71} = 0,
+d_{72} = 0,
+d_{73} = -p_E\gamma_{E,I}E,
+d_{74} = 0, \\
+d_{75} = 0,
+d_{76} = 0,
+d_{77} = -\mu_E-p_E\gamma_{E,I}I,
+\end{gather*}
+где $A,L,I,V,E_0,Q,E$ --- значения соответствующих компонент вектора $U_k$.
+
+	\subsection{Численные эксперименты}
+
+
+Графики решения, полученные при численном интегрировании системы (\ref{Model1_1})---(\ref{Model1_7}) на интервале $[1, 150]$ c параметрами,приведенными в Табл. \ref{Table2},
+и шагом сетки $\delta$ с начальными данными
+\begin{equation} \label{initial2}
+\begin{gathered}
+A^{0}(t) = A^{*} = \frac{r_{A}}{\mu_{A}}, \, E^{0}_{0}(t) = E_{0}^{*} = \frac{r_{E_{0}}}{\mu_{E_{0}}}, \, L^{0}(t) = 0, \\
+ \, I^{0}(t) = 0, \, Q^{0}(t) = 0, E(0) = 0, \ -\omega_{max} \leq t \leq 0,\\
+V^{0}(t) = 
+\begin{cases}
+0, & t \leq -0.01\\
+5000 (t + 0.01), & -0.01 \leq t \leq 0.
+\end{cases}
+\end{gathered}
+\end{equation}
+изображены на Рис. \ref{integr_plot_1}, \ref{integr_plot_2} и \ref{integr_plot_3}, а с начальными данными 
+
+\begin{equation} \label{initial3}
+\begin{gathered}
+A^{0}(t) = \exp(12.2058)-1, \, E^{0}_{0}(t) = \exp(9.1195)-1, \\ L^{0}(t) = \exp(2)-1, 
+\, I^{0}(t) = \exp(0.5872)-1,  Q^{0}(t) = \exp(9.5289)-1, \\ E(0) = \exp(9.3488)-1, \ -\omega_{max} \leq t \leq 0,\\
+V^{0}(t) =
+\begin{cases}
+\exp(3.3452)-1, & t \leq -0.01\\
+\exp(3.3452)-1+15000(t+0.01), & -0.01 \leq t \leq 0
+\end{cases}
+\end{gathered}
+\end{equation}
+изображены на Рис. \ref{integr_plot_4}.
+
+{\bf Верификация результатов.} Для проведения верификационных вычислительных экспериментов модель была представлена в другой (эквивалентной) форме. 
+
+В итоге, система уравнений модели принимает вид
+$$
+\frac{d A(t)}{d t} = r_{A} - \mu_{A} A(t) - \gamma_{A, V} A(t) V(t) - \gamma_{A, I} A(t) I(t), 
+$$
+$$
+\frac{d L(t)}{d t} =  - (\mu_{L} + \alpha_{L}) L(t) - \gamma_{L, I} L(t) I(t) + p_{L}\,\gamma_{A, V} A(t) V(t), 
+$$
+$$
+\frac{d I(t)}{d t} =  - (\mu_{I} + \sigma_{I} \nu_{I}) I(t) - \gamma_{E, I} E(t) I(t) +  e^{- \mu_{C}\,\omega_{C}}\,\rho_{C}(t - \omega_{C}), 
+$$
+$$
+\frac{d V(t)}{d t} = - \mu_{V} V(t) - \gamma_{A, V} A(t) V(t) - \gamma_{L, V} L(t) V(t) -
+$$
+$$
+\, - \gamma_{C, V} C(t) V(t) + e^{- \mu_{U}\,\omega_{U}}\,\rho_{U}(t - \omega_{U}),   
+$$
+$$
+\frac{d E_{0}(t)}{d t} = r_{E_{0}} - \mu_{E_{0}} E_{0}(t) - \rho_{E_{1}}(t), 
+$$
+$$
+\frac{d Q(t)}{d t} =  - \mu_{Q} Q(t) - \rho_{E_{2}}(t) + n_{Q_{1}} \rho_{E_{1}}(t - \omega_{E_{1}}) + n_{Q_{2}} \rho_{E_{2}}(t - \omega_{E_{2}}), 
+$$
+$$
+\frac{d E(t)}{d t} = - \mu_{E} E(t) - p_{E} \gamma_{E, I} E(t) I(t) + n_{E_{1}} \rho_{E_{1}}(t - \omega_{E_{1}}) + n_{E_{2}} \rho_{E_{2}}(t - \omega_{E_{2}}), 
+$$
+$$
+\frac{d C(t)}{d t} = \rho_{C}(t) - \mu_{C} C(t) - e^{- \mu_{C}\,\omega_{C}}\,\rho_{C}(t - \omega_{C}),   
+$$
+$$
+\frac{d U(t)}{d t} = \rho_{U}(t) - \mu_{U} U(t) - e^{- \mu_{U}\,\omega_{U}}\,\rho_{U}(t - \omega_{U}), \ \ t \geq 0,  
+$$
+$$
+A(t) = A^{0}(t), \  L(t) = L^{0}(t),  \   I(t) = I^{0}(t),  \  V(t) = V^{0}(t),
+$$
+$$
+E_{0}(t) = E^{0}_{0}(t), \   Q(t) = Q^{0}(t),   \ \  t \in [- \omega_{max}; 0],  \ E(0) = E^{0},
+$$
+\begin{equation} \label{C}
+C(0) =  \int_{- \omega_{C}}^{0} e^{\mu_{C} s}\,\rho_{C}(s)\,d s. 
+\end{equation}
+
+В приведенных выше системах дифференциальных уравнений приняты следующие обозначения:
+\begin{gather*}
+\rho_{C}(t) = (1 - p_{L}) \gamma_{A, V} A(t) V(t) + \gamma_{A, I} A(t) I(t) + \gamma_{L, I} L(t) I(t) + \alpha_{L} L(t), \\
+\rho_{U}(t) = \nu_{I} I(t), \ \
+\rho_{E_{1}}(t) =  \gamma_{E_{0}, A, V} E_{0}(t) A(t) V(t), \ \ \rho_{E_{2}}(t) =  \gamma_{Q, A, V} Q(t) A(t) V(t),
+\end{gather*}
+В формуле (\ref{C}) для нахождения $C(0)$ используются начальные функции 
+$$
+A^{0}(t), \   V^{0}(t), \   I^{0}(t), \   L^{0}(t), \ \  t \in [- \omega_{max}, 0]. 
+$$
+
+Для нахождения указанных выше переменных используем следующие соотношения (явно-неявная схема Эйлера):
+$$
+\frac{A(t_{j+1}) - A(t_{j})}{h} = r_{A} - \mu_{A} A(t_{j+1}) - \gamma_{A, V} A(t_{j+1}) V(t_{j}) - \gamma_{A, I} A(t_{j+1}) I(t_{j}), 
+$$
+$$
+\frac{L(t_{j+1}) - L(t_{j})}{h} =  - (\mu_{L} + \alpha_{L}) L(t_{j+1}) - \gamma_{L, I} L(t_{j+1}) I(t_{j}) + p_{L}\,\gamma_{A, V} A(t_{j}) V(t_{j}), 
+$$
+$$
+\frac{I(t_{j+1}) - I(t_{j})}{h} =  - (\mu_{I} + \sigma_{I} \nu_{I}) I(t_{j+1}) - \gamma_{E, I} E(t_{j}) I(t_{j+1}) 
++  e^{- \mu_{C}\,\omega_{C}}\,\rho_{C}(t_{j} - \omega_{C}), 
+$$
+$$
+\frac{V(t_{j+1}) - V(t_{j})}{h} =  - \mu_{V} V(t_{j+1}) - \gamma_{A, V} A(t_{j}) V(t_{j+1}) - \gamma_{L, V} L(t_{j}) V(t_{j+1}) - 
+$$
+$$
+\, - \gamma_{C, V} C(t_{j}) V(t_{j+1}) + e^{- \mu_{U}\,\omega_{U}}\,\rho_{U}(t_{j} - \omega_{U}),   
+$$
+$$
+\frac{E_{0}(t_{j+1}) - E_{0}(t_{j})}{h} = r_{E_{0}} - \mu_{E_{0}} E_{0}(t_{j+1}) - \gamma_{E_{0}, A, V} E_{0}(t_{j+1}) A(t_{j}) V(t_{j}), 
+$$
+$$
+\frac{Q(t_{j+1}) - Q(t_{j})}{h} =  - \mu_{Q} Q(t_{j+1}) - \gamma_{Q, A, V} Q(t_{j+1}) A(t_{j}) V(t_{j}) +
+$$
+$$
+\, + n_{Q_{1}} \rho_{E_{1}}(t_{j} - \omega_{E_{1}}) + n_{Q_{2}} \rho_{E_{2}}(t_{j} - \omega_{E_{2}}), 
+$$
+$$
+\frac{E(t_{j+1}) - E(t_{j})}{h} =  - \mu_{E} E(t_{j+1}) -  p_{E} \gamma_{E, I} E(t_{j+1}) I(t_{j}) +
+$$
+$$
+\, + n_{E_{1}} \rho_{E_{1}}(t_{j} - \omega_{E_{1}}) + n_{E_{2}} \rho_{E_{2}}(t_{j} - \omega_{E_{2}}),
+$$
+$$
+\frac{C(t_{j+1}) - C(t_{j})}{h} = \rho_{C}(t_{j}) - \mu_{C} C(t_{j+1}) - e^{- \mu_{C}\,\omega_{C}}\,\rho_{C}(t_{j} - \omega_{C}), 
+$$
+
+
+Отсюда приходим к рекуррентным соотношениям 
+$$
+t_{0} = 0, \ \ t_{j+1} = t_{j} + h, \ \ j = 0, 1, \dots , \ \ t_{j+1} \leq T_{mod},  
+$$
+$$
+A(t_{j+1}) =  \frac{A(t_{j}) + r_{A} h}{1 + (\mu_{A} + \gamma_{A, V}  V(t_{j}) + \gamma_{A, I} I(t_{j})) h}, 
+$$
+$$
+L(t_{j+1}) =  \frac{L(t_{j}) + p_{L}\,\gamma_{A, V} A(t_{j}) V(t_{j}) h}{1 + (\mu_{L} + \alpha_{L} + \gamma_{L, I}I(t_{j})) h}, 
+$$
+$$
+I(t_{j+1}) =  \frac{I(t_{j}) + e^{- \mu_{C}\,\omega_{C}}\,\rho_{C}(t_{j} - \omega_{C}) h}{1 + (\mu_{I} + \sigma_{I} \nu_{I} + \gamma_{E, I} E(t_{j})) h}, 
+$$
+$$
+V(t_{j+1}) =  \frac{V(t_{j}) + e^{- \mu_{U}\,\omega_{U}}\,\rho_{U}(t_{j} - \omega_{U}) h}
+{1 + (\mu_{V} + \gamma_{A, V} A(t_{j}) + \gamma_{L, V} L(t_{j}) + \gamma_{C, V} C(t_{j})) h}, 
+$$
+$$
+E_{0}(t_{j+1}) =  \frac{E_{0}(t_{j}) + r_{E_{0}} h}{1 + (\mu_{E_{0}} + \gamma_{E_{0}, A, V} A(t_{j}) V(t_{j})) h}, 
+$$
+$$
+Q(t_{j+1}) =  \frac{Q(t_{j}) + n_{Q_{1}} \rho_{E_{1}}(t_{j} - \omega_{E_{1}}) h + n_{Q_{2}} \rho_{E_{2}}(t_{j} - \omega_{E_{2}}) h }{1 + (\mu_{Q} + \gamma_{Q, A, V} A(t_{j}) V(t_{j})) h}, 
+$$
+$$
+E(t_{j+1}) =  \frac{E(t_{j}) + n_{E_{1}} \rho_{E_{1}}(t_{j} - \omega_{E_{1}}) h + n_{E_{2}} \rho_{E_{2}}(t_{j} - \omega_{E_{2}}) h }{1 + (\mu_{E} + p_{E} \gamma_{E, I} I(t_{j})) h}, 
+$$
+$$
+C(t_{j+1}) =  \frac{C(t_{j}) + \rho_{C}(t_{j}) h -  e^{- \mu_{C}\,\omega_{C}}\,\rho_{C}(t_{j} - \omega_{C}) h}{1 + \mu_{C} h}, 
+$$
+дополненным начальными данными (\ref{C}).  
+
+Для приближенного вычисления $C(0)$, приведенных в (\ref{C}),  соответствующий  интеграл заменяется на сумму по формуле прямоугольников: 
+$$
+C(t_{0}) = \sum_{s_{i} = - i\,h \in [- \omega_{C},0]} e^{\mu_{C} s_{i}}\,\rho_{C}(s_{i}) h, 
+$$
+
+
+Решение, вычисленное с помощью этого метода, показало хорошее совпадение с расчетами, полученными методом BDF2. 
+
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/test1.eps, scale=1}} 
+	\caption{Результат интегрирования с начальными данными (\ref{initial2}), набором значений параметров 1 из Табл. \ref{Table2} по явно-неявной схеме Эйлера (синим) и по схеме BDF2 с шагом сетки $\delta = 5\cdot 10^{-4}$ (красным).}
+	\label{integr_plot_1}
+\end{figure}
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/test2.eps, scale=1}} 
+	\caption{Результат интегрирования с начальными данными (\ref{initial2}), набором значений параметров 2 из Табл. \ref{Table2} по явно-неявной схеме Эйлера (синим) и по схеме BDF2 с шагом сетки $\delta =  10^{-4}$ (красным).}
+	\label{integr_plot_2}
+\end{figure}
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/test3.eps, scale=1}} 
+	\caption{Результат интегрирования с начальными данными (\ref{initial2}), набором значений параметров 1 из Табл. \ref{Table2} по явно-неявной схеме Эйлера (синим) и по схеме BDF2 с шагом сетки $\delta = 5\cdot 10^{-4}$ (красным).}
+	\label{integr_plot_3}
+\end{figure}
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/test4.eps, scale=1}} 
+	\caption{Результат интегрирования с начальными данными (\ref{initial3}), набором значений параметров 1 из Табл. \ref{Table2} по явно-неявной схеме Эйлера (синим) и по схеме BDF2 с шагом сетки $\delta = 5\cdot 10^{-4}$ (красным).}
+	\label{integr_plot_4}
+\end{figure}
+
+\section{Вычисление стационарных состояний}
+\label{S3}
+
+
+\subsection{Сведение к системе двух алгебраических уравнений}
+\label{S3.1}
+
+Стационарные состояния системы (\ref{Model1_1}) --- (\ref{Model1_7})  при фиксированных значениях параметров являются неотрицательными решениями следующей системы  уравнений относительно $A,L,I,V,E_0,Q,E$:	
+
+\begin{gather}
+	r_A - \mu_A A-\gamma_{A,V} AV-\gamma_{A,I}AI=0,\label{eqA} \\
+	\nonumber \\
+	%
+	-(\mu_L+\alpha_L)L-\gamma_{L,I}LI+p_L\gamma_{A,V}AV=0,\label{eqL} \\
+	\nonumber \\
+	%
+	 -(\mu_I+\sigma_I\nu_I)I-\gamma_{E,I}EI+e^{-\mu_C\omega_C}\rho_C=0,
+	\label{eqI} \\
+	\nonumber \\ 
+	%
+	-\mu_VV-\gamma_{A,V}AV-\gamma_{L,V}LV-\gamma_{C,V}\frac{\rho_C}{\mu_C}(1-e^{-\mu_C\omega_C})V
+	+e^{-\mu_U\omega_U}\rho_U=0, \label{eqV} \\
+	\nonumber \\ 
+	%
+	r_{E_0}-\mu_{E_0}E_0-\rho_{E_1}=0,
+	\label{eqE_0} \\
+	\nonumber \\
+	%
+	 -\mu_QQ-\rho_{E_2}+n_{Q_1}\rho_{E_1}+n_{Q_2}\rho_{E_2}=0,
+	\label{eqQ} \\
+	\nonumber \\
+	%
+	 -\mu_EE-p_E\gamma_{E,I}EI+n_{E_1}\rho_{E_1}+
+	n_{E_2}\rho_{E_2}=0, \label{eqE}
+	%
+\end{gather}
+где 
+\begin{eqnarray}
+\rho_C = (1-p_L)\gamma_{A,V}AV+\gamma_{A,I}AI+\gamma_{L,I}LI+\alpha_LL, \nonumber \\ 
+\rho_U=\nu_II,
+\rho_{E_1}=\gamma_{E_0,A,V}E_0AV,
+\rho_{E_2} = \gamma_{Q,A,V}QAV. \nonumber
+\end{eqnarray}
+Будем предполагать, что выполненo неравенствo (\ref{HYP1}). Тогда
+система (\ref{eqA}) --- (\ref{eqE}) имеет неотрицательное решение 
+\begin{eqnarray}
+V=U=I=C=L=0, \nonumber \\  A=\frac{r_A}{\mu_A}, \; E_0=\frac{r_{E_0}}{\mu_{E_0}}, \; Q=0, \; E=0. \label{TrivSol}
+\end{eqnarray}
+Все остальные  неотрицательные решения системы, если таковые имеются, удовлетворяют неравенствам $V>0$, $A>0$. 
+%Действительно, поскольку 
+%величины  $\alpha_m$, $\max\{\nu,nb_{m}\}$, $C^0$ и $\sigma$  положительные, 
+%из  (\ref{one}) --- (\ref{three}) следует, что $V_f= 0\, \Leftrightarrow\, C_V= 0$, а из уравнений (\ref{three}) --- (\ref{ten}) и положительности констант скорости $\alpha$ со всеми возможными индексами следует, что если $V_f=C_V= 0$, то справедливы равенства (\ref{TrivSol}).
+
+
+%Таким образом, поиск неотрицательных решений системы (\ref{eqA}) --- (\ref{eqE}) сводится к поиску решений с  
+%$V>0$ и $0<A\le \max\{A^0, \frac{r_A}{\mu_A}\}$. В этом случае систему можно существенно упростить, явно выразив из уравнений 
+%(\ref{eqA}) --- (\ref{eqL}) и
+%(\ref{eqE_0}) --- (\ref{eqE})  переменные
+%$E_0$ $I$, $L$,  $Q$, $E$, , как функции $V$ и $A$. Действительно, из 
+%(\ref{eqE_0}) следует, что 
+%\begin{gather} 	
+%E_0=\frac{r_{E_0}}{\mu_{E_0}+\gamma_{E_0,A,V} AV} \label{E_0}.
+%\end{gather}
+%Из (\ref{eqA}) следует, что 
+%\begin{gather} 	
+%I=\frac{r_A-\mu_AA-\gamma_{A,V}AV}{\gamma_{A,I}A} \label{I}.
+%\end{gather}
+%Из (\ref{eqL}) следует, что 
+%\begin{gather} 	
+%L = \frac{p_L\gamma_{A,V}AV}{\mu_L+\alpha_L+\gamma_{L,I}I} \label{L}.
+%\end{gather}
+%Из (\ref{eqQ}) следует, что 
+%\begin{gather} 	
+%Q = \frac{n_{Q_1}\gamma_{E_0,A,V}E_0AV}{\mu_Q+\gamma_{Q,A,V}AV(1-n_{Q_2})}. \label{Q}
+%\end{gather}
+%Из (\ref{eqE}) следует, что 
+%\begin{gather} 	
+%E = \frac{n_{E_1}\rho_{E_1}+n_{E_2}\rho_{E_2}}{\mu_E+p_E\gamma_{E,I}I} \label{E}.
+%\end{gather}
+%
+%Итак, множество неотрицательных решений системы (\ref{Model1_1}) --- (\ref{Model1_7}) состоит из решения (\ref{TrivSol})   и решений, переменные  $V$, $A$ которых удовлетворяют  системе уравнений:
+%\begin{gather}
+%-(\mu_I+\sigma_I\nu_I)I-\gamma_{E,I}EI+e^{-\mu_C\omega_C}\rho_C=0,\label{eq1} \\
+%\nonumber \\
+%%
+%-\mu_VV-\gamma_{A,V}AV-\gamma_{L,V}LV-\gamma_{C,V}\frac{\rho_C}{\mu_C}(1-e^{-\mu_C\omega_C})V
+%+e^{-\mu_U\omega_U}\rho_U=0. \label{eq2} 
+%\end{gather}
+
+\subsection{Вычисление стационарных состояний}
+\label{S3.2}
+Решая систему (\ref{eqA})---(\ref{eqE}), находим стационарные состояния, представленные в Табл. \ref{st_st}.
+\begin{table}[h]
+	\caption{Значения переменных модели в стационарных состояниях, округленные до 4-х значащих цифр, при значениях параметров из Табл. \ref{Table2}.} \label{st_st}
+	\begin{footnotesize}
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				
+				\multirow{2}{*}{Переменная}  &  \multicolumn{2}{|c|}{Набор 1} &  Набор 2 & \multicolumn{2}{|c|}{Набор 3}\\
+				\cline{2-6}
+				& I & II & I & I & II \\
+				\hline
+				$A$ & $5\cdot 10^6$ & $4.956\cdot 10^6$ &$2\cdot 10^5$& $2\cdot 10^5$ & $1.999\cdot 10^5$\\
+				$L$ & $0$ & $1.139\cdot10^3$ & 0 & $0$ & $6.847$\\
+				$I$ & $0$ & $1.650\cdot10^2$ & 0& $0$ & $0.833$\\
+				$V$ & $0$ & $5.604\cdot10^3$ & 0& $0$ & $28.54$\\
+				$E_0$ & $1.2\cdot10^3$ & $1.005\cdot10^3$ & $1.2\cdot 10^4$& $1.2\cdot10^4$ & $8.575\cdot10^3$\\
+				$Q$ & $0$ & $8.900\cdot 10^6$ & 0 & $0$ & $1.396\cdot10^4$\\
+				$E$ & $0$ & $1.482\cdot 10^6$ & 0 & $0$ & $1.163\cdot 10^4$\\
+				\hline
+				$\lambda$ ведущее & 1.124 &  -0.009 & -0.010 & -0.010 & -0.010\\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{footnotesize}
+\end{table}   
+
+
+
+\newpage
+\section{Анализ устойчивости}
+\label{S4}
+
+
+Для исследования устойчивости заданного стационарного состояния $\overline{U}$ системы  (\ref{Model2}) при фиксированных значениях параметров представим решение вблизи этого стационарного состояния в виде $U(t) = \overline{U} + \varepsilon U'(t) + o(\varepsilon^2)$, где $\varepsilon$ --- малый параметр. Подставив это представление в (\ref{Model2}) и пренебрегая членами порядка $\varepsilon^2$, для функции $U'(t)$ получим систему следующего вида:
+\begin{equation} 
+\frac { d}{ dt }U'(t) = L_0U'(t)+\int_{t-\omega_C}^t e^{-\mu_C(t-s)}L_1U'(s)ds+\sum_{j\in\{C,U,E_1,E_2\}} L_jU'(t-\omega_j) ,\label{system}
+\end{equation}
+где $L_0$, $L_1$ $L_j$ означают постоянные, квадратные матрицы седьмого порядка.
+%, являющиеся соответственно значениями в стационарном состоянии частных производных
+%$\partial F/\partial U$, \textcolor{red}{$ \frac{1}{e^{-\mu_C(t-s)}}\partial F/\partial U(s)$} и  
+%$\partial F/\partial U(t-\omega_j)$
+% правой части системы (\ref{Model2}).
+
+
+Стационарное состояние $\overline{U}$ асимптотически устойчиво, если любое решение системы (\ref{system}) вида
+\begin{gather}
+U'(t) = \widetilde{U} e^{\lambda t} \label{solution},
+\end{gather}
+где $\widetilde{U}$  --- постоянный десяти компонентный вектор, а $\lambda$ --- число, монотонно убывает при $t \rightarrow \infty$. Подставим (\ref{solution}) в (\ref{system}), получив следующую нелинейную проблему собственных значений:
+\begin{gather}
+A(\lambda)\widetilde{U} = 0 \label{problem},
+\end{gather}
+где 
+
+\begin{gather*}
+A(\lambda) =\lambda I- L_0-\sum_j L_je^{-\lambda\omega_j}-
+\begin{cases}
+	\displaystyle
+	\frac{1-e^{-(\lambda+\mu_C)\omega_C}}{\mu_C+\lambda}L_1, & \lambda +\mu_C \geq 1,\\
+	\displaystyle
+	\sum_{k=0}^{\infty} \frac{(-1)^k(\lambda+\mu_C)^k\omega_C^{k+1}}{(k+1)!}L_1, & \lambda +\mu_C< 1,
+\end{cases}
+\end{gather*}
+где $j\in\{U,C,E_2,E_1\}$, а $I$ --- единичная матрица седьмого порядка. 
+
+Таким образом, исследование асимптотической устойчивости стационарного состояния $\overline{U}$ сводится к решению нелинейной проблемы собственных значений (\ref{problem}) и проверке, что все найденные собственные значения $\lambda$ лежат строго в левой полуплоскости.
+%%%%%%%TODO изменить этот абзац 
+Алгоритмы, которые позволяют решать полную нелинейную проблему собственных значений вида (\ref{problem}), не известны. Более того, вообще говоря, эта проблема имеет бесконечное число решений. Так что мы будем аппроксимировать эту проблему рациональной проблемой собственных значений. Решения рациональной проблемы будут приближениями к решениям исходной проблемы (\ref{problem}), которые можно затем уточнить при помощи какого-либо из локальных методов ньютоновского типа.
+
+
+
+Для поиска $\lambda$ так же как и в пункте \ref{sec_3.1} применим неявную схему второго порядка BDF2 \cite{HNW} на равномерной сетке
+$$
+\{t_k=\delta k:\; k=-m_{max}+1,-m_{max}+2,\ldots\},
+$$
+построенной с шагом $\delta>0$ в полуинтервале $(-\omega_{max},\infty)$. Величины $m_\alpha=[\omega_\alpha/\delta]$, $ \alpha\in\{C,U,E_1,E_2\}$, где  $[.]$ означает целую часть числа, являются дискретными аналогами задержек, $m_{max}=max\{m_C,m_U,m_{E_1},m_{E_2}\}$. Тогда система (\ref{system}) примет следующий вид:
+\begin{multline}\label{LinBDF2_stab_lin}
+\frac { 1.5U'_k- 2U'_{k-1} +0.5U'_{k-2}}{\delta} =\\= L_0 U'_k +\sum_{s=k-m_C+1}^k \frac{\delta}{2}L_1(e^{-\mu_C\delta(k-(s-1))}U'_{s-1}+e^{-\mu_C\delta(k-s)}U'_s) + \\+\sum_{j\in\{C,U,E_1,E_2\}} L_j U'_{k-m_j},
+k=1,2,\ldots.
+\end{multline}
+где $U'_k$ --- сеточная функция, аппроксимирующая   $U'(t_k)$. 
+
+
+Для исследования устойчивости будем искать $U'_k$ в виде $U'_k=\widetilde{U}\mu^k$. Соответственно, $\lambda = \ln \mu / \delta$. Тогда система (\ref{LinBDF2_stab_lin}) примет вид
+\begin{equation} \label{mu}
+\widehat{A}(\mu)\widetilde{U}=0,
+\end{equation}
+где
+\begin{multline} 
+\widehat{A}(\mu)=\frac{1.5 - 2 \mu^{-1} + 0.5 \mu^{-2} }{\delta}  I
+-L_0-\\-\sum_{s=1}^{m_C}\frac{\delta}{2}L_1( e^{-\mu_C\delta (s-1)}\mu^{-(s-1)}+e^{-\mu_C\delta s}\mu^{-s}) -\sum_{j\in\{C,U,E_1,E_2\}} L_j\mu^{-m_j}.\nonumber
+\end{multline}
+
+
+ Для всех наших наборов  параметров верно: $m_U\leq m_C\leq m_{E_2}\leq m_{E_1} $.
+Умножим уравнение (\ref{mu}) на $\mu^{m_{E_1}}$. Полученное уравнение можно привести к следующей полиномиальной проблеме: 
+\begin{multline} 
+\label{m_4_equation}
+\mu^{m_{E_1}}\widetilde{U} = \\=\mu^{m_{E_1}-1}C_1\widetilde{U} + \mu^{m_{E_1}-2} C_2 \widetilde{U} +\sum_{s=1}^{m_C} \mu^{m_{E_1}-s}C'_s\widetilde{U} +\sum_{j\in\{C,U,E_1,E_2\} } \mu^{m_{E_1}-m_j}C_{m_j}\widetilde{U}, 
+\end{multline}
+где
+\begin{equation}
+\begin{gathered} 
+C_1 = 2(1.5I - \delta L_0-\frac{\delta^2}{2} L_1)^{-1}, \\ 
+C_2 = -0.5(1.5I - \delta L_0-\frac{\delta^2}{2} L_1)^{-1},   \\ 
+C'_s = (1.5I - \delta L_0-\frac{\delta^2}{2} L_1)^{-1}\delta^2 e^{-\mu_C\delta s}L_1, \quad s=1\ldots m_C-1,\\
+C'_{m_C} = (1.5I - \delta L_0-\frac{\delta^2}{2} L_1)^{-1}\frac{\delta^2}{2} e^{-\mu_C\delta m_C}L_1,\\
+C_{m_j} = (1.5I - \delta L_0-\frac{\delta^2}{2} L_1)^{-1}\delta L_{j}, \quad j\in\{C,U,E_1,E_2\}. \nonumber
+\end{gathered}
+\end{equation}
+Дополним уравнение (\ref{m_4_equation}) тождествами  $\widetilde{U}\mu^j =\widetilde{U}\mu^j, \; j = 0,\ldots,m_{E_1}-1$, таким образом получив систему из $m_{E_1}$ уравнений, которую можно записать в виде: 
+\begin{gather} 
+\mu\widetilde{X} = M\widetilde{X}, 
+\end{gather}
+где 
+\begin{equation*}  
+\widetilde{X} = \left( 
+\begin{array}{c}
+\widetilde{X}_1 \\
+\vdots  \\
+\widetilde{X}_{m_{E_1}}
+\end{array}
+\right), \;
+M = \left(
+\begin{array}{ccc}
+M_{11} & \ldots & M_{1m_{E_1}}\\
+\vdots & \ddots & \vdots \\
+M_{m_{E_1}1} & \ldots & M_{m_{E_1} m_{E_1}}
+\end{array}
+\right). 
+\end{equation*}
+
+Здесь $\widetilde{X}_i = \widetilde{U}\mu^{m_{E_1} - i} $ при $i = 1,\ldots,m_{E_1}$, а матрица $M$ является блочной, блочного порядка $m_{E_1}$ с блоками порядка $7$. Все блоки этой матрицы нулевые, кроме поддиагональных блоков $M_{i+1,i} = I \; (i = 1,\ldots,m_{E_1}-1)$ и блоков $M_{11} = C_1+C'_1$, $M_{12} = C_2+C'_2$, $M_{1m_j} = C_{m_j} \; (j \in \{U,C,E_2,E_1\}$), а также $M_{1s} = M_{1s}+C'_s \; (s=1,\ldots m_C)$, стоящих в первой блочной строке.
+
+Таким образом, мы свели приближенное решение нелинейной проблемы собственных значений (\ref{problem}) к вычислению собственных значений матрицы $M$, что можно сделать применяя стандартный QR-алгоритм \cite{GVL}. Тогда приближенные решения проблемы (\ref{problem}) выражаются через собственные значения матрицы $M$ как $\lambda=\ln(\mu)/\delta$.
+
+Выберем для надежности из них определенное число ведущих (с максимальными вещественными частями) и уточним каждое из них методом последовательных линейных проблем \cite{CE,DNS_2017}, который заключается в следующем итерационном процессе: 
+\begin{gather} 
+\lambda_{j+1} = \lambda_j -\nu_j. \nonumber 
+\end{gather}
+
+Здесь $j$ --- номер итерации, а $\nu_j$ --- минимальное по абсолютной величине решение линейной проблемы собственных значений $A(\lambda_j)x = \nu B(\lambda_j)x$, где $B(\lambda)=dA/d\lambda$ и равна
+\begin{multline}
+B(\lambda) = I+\sum_j\omega_j L_{j}e^{-\lambda\omega_j}+\\+
+\begin{cases}
+\displaystyle
+(\frac{\omega_C e^{-(\lambda+\mu_C)\omega_C}}{\lambda+\mu_C}+\frac{1-e^{-(\lambda+\mu_C)\omega_C}}{(\lambda+\mu_C)^2})L_1, &\lambda +\mu_C\geq 1,\\
+\displaystyle
+\sum_{k=0}^{\infty} (-1)^k(\lambda+\mu_C)^{k-1}\omega_C^{k+1}(\frac{1}{k!}+\frac{1}{(k+1)!})L_1, &\lambda +\mu_C<1,
+\end{cases}
+\end{multline}
+где ${j\in \{U,C,E_2,E_1\}}$.
+
+На каждом Рис. \ref{1}---\ref{5} изображены $15$ приближенных и $7$ уточненных собственных значений с наибольшими вещественными частями в стационарных состояниях, значения переменных в которых приведены в Tабл.~\ref{Table2}. Синими маркерами <<o>> обозначены приближенные собственные значения  проблемы (\ref{problem}), полученные с помощью рациональной аппроксимации. Синими маркерами <<+>> обозначены собственные значения, уточненные методом последовательных линейных проблем. Видно, что первое состояние неустойчиво, остальные 4 стационарных состояния устойчивые.
+
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/1.eps, scale=1.3}} 
+	\caption{Собственные значения для 1-го набора параметров, 1-го стационарного состояния.}
+	\label{1}
+\end{figure}
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/2.eps, scale=1.3}} 
+	\caption{Собственные значения для 1-го набора параметров, 2-го стационарного состояния.}
+	\label{2}
+\end{figure}
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/3.eps, scale=1.3}} 
+	\caption{Собственные значения для 2-го наборa параметров, 1-го стационарного состояния.}
+	\label{3}
+\end{figure}
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/4.eps, scale=1.3}} 
+	\caption{Собственные значения для 3-го наборa параметров, 1-го стационарного состояния.}
+	\label{4}
+\end{figure}
+
+
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/5.eps, scale=1.3}} 
+	\caption{Собственные значения для 3-го набора параметров, 2-го стационарного состояния.}
+	\label{5}
+\end{figure}
+\begin{figure}[p]
+	\centerline{\epsfig{file=Figures/test_all.png, scale=0.8}} 
+	\caption{$E_0$ и $E_i$ --- приближенные и уточненные собственные значения для всех найденных стационарных состояний, $s_i=\frac{\sigma_i}{\sigma_{max}}$, где $\sigma_i$ --- 4 минимальных сингулярных числа в порядке возрастания.}
+	\label{test_all}
+\end{figure}
+
+
+%\begin{table}[h]
+%	\caption{$E_0$ и $E_i$ --- приближенные и уточненные собственные значения для всех найденных стационарных состояний, $s_i=\frac{\sigma_i}{\sigma_{max}}$, где $\sigma_i$ --- 4 минимальных сингулярных числа в порядке возрастания.} \label{results}
+%	\begin{footnotesize}
+%		\begin{center}
+%			\begin{tabular}{|c|c|c|c|c|c|}
+%				\hline
+%				
+%				\multicolumn{6}{|c|}{Стационарное состояние 1}\\
+%				\hline
+%				E0         &  Ei           &s1           &s2           &s3           &s4\\
+%				\hline
+%				0.627964   & 1.124225      &    -17      &     -2      &     -2      &     -2  \\
+%				-0.010000  &  -0.010000    &      -16    &      -16    &      -16    &       -3\\
+%				-0.010000  &  -0.010000    &      -16    &      -16    &      -16    &       -3\\
+%				-0.010000  &  -0.010000    &      -16    &      -16    &      -16    &       -3\\
+%				-0.060186  &  -0.073509    &      -16    &       -4    &       -3    &       -3\\
+%				-0.080000  &  -0.080000    &      -16    &       -4    &       -3    &       -3\\
+%				-3.060330  &  -4.519880    &      -17    &       -2    &       -2    &       -2\\
+%				\hline
+%				\multicolumn{6}{|c|}{Стационарное состояние 2}\\
+%				\hline
+%				E0         & Ei           &s1           &s2           &s3           &s4\\
+%				\hline
+%				-0.000026  &  -0.009248   &       -15   &        -5   &        -5   &        -3\\
+%				-0.010143  &  -0.011295   &       -15   &        -5   &        -5   &        -3\\
+%				-0.011944  &  -0.011943   &       -16   &        -7   &        -5   &        -3\\
+%				-0.059947  &  -0.056493   &       -15   &        -3   &        -3   &        -3\\
+%				-0.080579  &  -0.056493   &       -15   &        -3   &        -3   &        -3\\
+%				-1.545909  &  -0.702484   &        -6   &        -2   &        -2   &        -2\\
+%				-3.076608  &  -0.811287   &        -6   &        -2   &        -2   &        -2\\
+%				\hline
+%				\multicolumn{6}{|c|}{Стационарное состояние 3}\\
+%				\hline
+%				E0          & Ei           &s1           &s2           &s3           &s4\\
+%				\hline
+%				-0.010000   & -0.010000    &      -17    &      -12    &      -12    &       -3\\
+%				-0.010000   & -0.010000    &      -17    &      -12    &      -12    &       -3\\
+%				-0.010000   & -0.010000    &      -17    &      -12    &      -12    &       -3\\
+%				-0.080000   & -0.080000    &      -14    &       -3    &       -3    &       -3\\
+%				-0.109747   & -0.124629    &       -8    &       -3    &       -3    &       -3\\
+%				-0.260980   & -0.684071    &       -6    &       -2    &       -2    &       -2\\
+%				-3.009684   & -3.335666    &      -17    &       -3    &       -3    &       -3\\
+%				\hline
+%				\multicolumn{6}{|c|}{Стационарное состояние 4}\\
+%				\hline
+%				E0          &Ei           &s1           &s2           &s3           &s4\\
+%				\hline
+%				-0.010000   & -0.010000   &       -15   &       -13    &       -5   &        -4\\
+%				-0.010000   & -0.010000   &       -15   &       -13    &       -5   &        -4\\
+%				-0.029917   & -0.010000   &       -15   &       -13    &       -5   &        -4\\
+%				-0.050000   & -0.050000   &       -16   &        -4    &       -4   &        -3\\
+%				-0.080000   & -0.082042   &        -8   &        -4    &       -3   &        -3\\
+%				-0.328578   & -0.080000   &       -22   &        -4    &       -3   &        -3\\
+%				-3.029564   & -3.808886   &       -17   &        -3    &       -3   &        -3\\
+%				\hline
+%				\multicolumn{6}{|c|}{Стационарное состояние 5}\\
+%				\hline
+%				E0          & Ei           &s1           &s2           &s3           &s4\\
+%				\hline
+%				-0.010004   & -0.010009    &      -16    &       -6    &       -5    &       -4\\
+%				-0.013975   & -0.030695    &      -11    &       -4    &       -4    &       -4\\
+%				-0.029511   & -0.030697    &      -12    &       -4    &       -4    &       -4\\
+%				-0.029957   & -0.030697    &      -13    &       -4    &       -4    &       -4\\
+%				-0.080169   & -0.233404    &       -6    &       -3    &       -3    &       -3\\
+%				-0.733793   & -0.338540    &       -6    &       -3    &       -3    &       -3\\
+%				-3.032693   & -0.305079    &       -6    &       -3    &       -3    &       -3\\
+%				\hline
+%			\end{tabular}
+%		\end{center}
+%	\end{footnotesize}
+%\end{table} 
+
+
+
+
+
+\begin{thebibliography}{99}
+	\bibitem{Pertsev_2019}
+	{\it Pertsev~N.~V, Loginov~K.~К., Bocharov~G.~A.} Nonlinear effects in the dynamics of HIV-1 infection predicted by mathematical model with multiple delays // X. X. Vol. X. No. X, P. X---X.
+	%	
+	\bibitem{Pertsev_2018}
+	{\it N.~V.~Pertsev} Global Solvability and Estimates of Solutions to the Cauchy Problem for the
+	Retarded Functional Differential Equations That Are Used to Model Living Systems
+	// Sib.
+	Math. J., 59 (2018), 113–125.
+	\bibitem{HNW}
+	\emph{Hairer~E., Wanner~G.} Solving ordinary differential equations.
+	Springer-Verlag. Berlin, 1996.
+	\bibitem{GVL}
+	\emph{Golub~G.~H., Van Loan~C.~F.} Matrix Computations.
+	The Johns Hopkins University Press. 1989.
+	%
+	\bibitem{CE}
+	\emph{Effenberger~C.} Robust successive computation of eigenpairs for nonlinear eigenvalue problems. // SIAM J. Matrix Anal.
+	Applic. 2013. No. 34, P. 1231---1256.
+	%
+	\bibitem{DNS_2017}
+	\emph{Demyanko~K.~V., Nechepurenko~Y.~M., Sadkane~M.}
+	A Newton-type method for non-linear eigenproblems //Russian J. Numer. Anal. Math. Modelling. 2017. Vol. 32, No. 4, P. 237-244.
+
+\end{thebibliography}
+
+\newpage
+\begin{center}
+	\tableofcontents
+\end{center}
+\medskip
+
+
+\end{document}
+
+

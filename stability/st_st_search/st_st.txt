@@ -1,0 +1,14 @@
+1 set of coefficients
+                       A                        L                        I                        V                       E0                        Q                        E
+               4.956e+06                     1388                      165                     5604                     1005                8.897e+06                1.482e+06
+                   5e+06                        0                        0                        0                     1200                        0                        0
+
+2 set of coefficients
+                       A                        L                        I                        V                       E0                        Q                        E
+                   2e+05                        0                        0                        0                  1.2e+04                        0                        0
+
+3 set of coefficients
+                       A                        L                        I                        V                       E0                        Q                        E
+                   2e+05                        0                        0                        0                  1.2e+04                        0                        0
+               1.999e+05                    6.847                   0.8331                    28.54                     8575                1.395e+04                1.163e+04
+
